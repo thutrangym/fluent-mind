@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 import { ThemeProvider } from "next-themes";
+import Navbar from "../components/nav/Navbar";
 
 
 const geistSans = Geist({
@@ -25,6 +25,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const role = "user";     
+  const tier = "free";
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -37,7 +39,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange={false}
           >
-            <Navbar />
+            <Navbar role={role} tier={tier}  />
             {children}
           </ThemeProvider>
        

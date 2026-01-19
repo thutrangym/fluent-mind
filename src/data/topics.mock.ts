@@ -1,6 +1,6 @@
 // data/topics.ts
 import { VideoCardProps } from "@/src/components/topics/video-card";
-import { LevelType } from "@/src/components/topics/topics-page";
+import { LevelType } from "@/src/components/topics/topics-content";
 
 export interface TopicSectionData {
   id: string;

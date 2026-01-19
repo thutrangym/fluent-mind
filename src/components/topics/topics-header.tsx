@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { LevelType } from "./topics-page";
+import { LevelType } from "./topics-content";
 
 interface Props {
   level: LevelType;
