@@ -4,7 +4,7 @@ import FaqAccordion from "../components/FaqAccordion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-[#FAFFF6] dark:bg-gray-900">
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 space-y-32">
 
         {/* ================= HERO ================= */}
@@ -21,7 +21,7 @@ export default function Home() {
             </p>
 
             <button className="mt-8 inline-flex items-center justify-center rounded-lg bg-blue-500 px-8 py-3 font-semibold text-white shadow-md transition hover:bg-blue-600">
-              Get Started
+              <a href="/login">Get Started</a>
             </button>
           </div>
 

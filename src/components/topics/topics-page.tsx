@@ -16,7 +16,7 @@ export default function TopicsPageClient() {
   );
 
   return (
-    <main className="container mx-auto px-4 py-10 space-y-10">
+    <main className="min-h-screen bg-[#FAFFF6] mx-auto  px-4 py-10 space-y-10">
       <TopicsHeader level={level} onChange={setLevel} />
       <TopicsTags />
 

@@ -46,7 +46,6 @@ export default function Navbar() {
 
   const moreLinks = [
     { label: "Leader Board", href: "/leaderboard" },
-    { label: "Redeem gifts", href: "/redeem" },
     { label: "Community", href: "/community" },
     { label: "Pricing", href: "/pricing" },
   ];
@@ -148,7 +147,7 @@ export default function Navbar() {
               </DropdownMenuPortal>
             </DropdownMenu>
 
-            {/* Profile */}
+            {/* Profile
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center p-0.5 rounded-full border border-gray-200 dark:border-gray-700 hover:border-blue-400 transition-all outline-none">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center text-white">
@@ -187,7 +186,12 @@ export default function Navbar() {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenuPortal>
-            </DropdownMenu>
+            </DropdownMenu> */}
+
+            {/* Login Button */}
+            <button className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#88DF46] to-[#34DBC5] rounded-lg shadow-md hover:scale-[1.02] transition-all">
+              <a href="/login">Login</a>
+            </button>
           </div>
         </div>
 
