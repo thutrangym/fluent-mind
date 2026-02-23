@@ -4,8 +4,6 @@ import { useState } from "react";
 import GoogleSignInButton from "@/src/app/(auth)/login/google/GoogleSignInButton";
 import { register } from "@/src/app/(auth)/register/action";
 
-type Role = "student" | "admin";
-
 export default function RegisterForm() {
   const [error, setError] = useState<string | null>(null);
 
