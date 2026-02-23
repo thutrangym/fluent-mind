@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Navbar from "../components/nav/Navbar";
+import Providers from "@/src/components/providers";
 
 
 const geistSans = Geist({
@@ -25,23 +26,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const role = "user";     
-  const tier = "free";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      
+      <Providers>
+
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange={false}
           >
-            <Navbar role={role} tier={tier}  />
+            <Navbar />
             {children}
           </ThemeProvider>
+      </Providers>
        
       </body>
     </html>

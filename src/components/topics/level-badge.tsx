@@ -1,4 +1,3 @@
-// components/topics/level-badge.tsx
 export default function LevelBadge({ level }: { level: string }) {
   const colors: Record<string, string> = {
     A1: "bg-green-500",

@@ -10,7 +10,7 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Topics", href: "/topics" },
-  { label: "Reviews", href: "/reviews", roles: ["user"] },
+  { label: "Reviews", href: "/reviews", roles: ["user", "admin", "guest"] },
   { label: "Vocabulary", href: "/vocabulary" },
   { label: "Leaderboard", href: "/leaderboard" },
   { label: "Community", href: "/community" },

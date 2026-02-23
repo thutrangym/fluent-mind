@@ -1,15 +1,13 @@
 "use client";
 
 import { ReactNode } from "react";
-import { useAuth } from "@/src/hooks/useAuth";
+import { useSession } from "next-auth/react";
 
 type Role = "guest" | "user" | "admin";
 
 interface RoleGuardProps {
-  /** Các role được phép truy cập */
   allow: Role[];
 
-  /** Nội dung hiển thị khi KHÔNG đủ role */
   fallback?: ReactNode;
 
   children: ReactNode;
@@ -20,13 +18,19 @@ export default function RoleGuard({
   fallback = null,
   children,
 }: RoleGuardProps) {
-  const { user, isLoggedIn } = useAuth();
+  const { data: session, status } = useSession();
+
+  const isLoading = status === "loading";
+  const isLoggedIn = status === "authenticated";
+  const user = session?.user ?? null;
 
   const currentRole: Role = !isLoggedIn
     ? "guest"
     : user?.role === "admin"
     ? "admin"
     : "user";
+
+  if (isLoading) return null;
 
   if (!allow.includes(currentRole)) {
     return <>{fallback}</>;

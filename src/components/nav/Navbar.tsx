@@ -23,16 +23,21 @@ import {
   Sparkles,
   ChevronDown,
 } from "lucide-react";
-
+import { useSession, signOut } from "next-auth/react";
 import favicon from "@/src/assets/favicon.png";
 import NavLink from "./NavLink";
-import { useAuth } from "@/src/hooks/useAuth";
+
 import { NAV_ITEMS } from "./nav.config";
 import type { NavItem, UserRole, UserTier } from "./nav.config";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
-  const { user, isLoggedIn, isPremium } = useAuth();
+
+  const { data: session, status } = useSession();
+  const user = session?.user ?? null;
+  const isLoading = status === "loading";
+  const isLoggedIn = status === "authenticated";
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const role: UserRole = !isLoggedIn
@@ -40,9 +45,12 @@ export default function Navbar() {
     : user?.role === "admin"
       ? "admin"
       : "user";
+  const tier: UserTier =
+  user?.tier === "premium" || user?.role === "admin"
+    ? "premium"
+    : "free";
 
-  const tier: UserTier = isPremium ? "premium" : "free";
-
+const isPremium = tier === "premium";
   const canShow = (item: NavItem): boolean => {
     if (item.roles && !item.roles.includes(role)) return false;
     if (item.tiers && !item.tiers.includes(tier)) return false;
@@ -127,7 +135,7 @@ export default function Navbar() {
                     asChild
                     className="rounded-xl cursor-pointer"
                   >
-                    <Link href="/admin/users" className="w-full">
+                    <Link href="/manage-user" className="w-full">
                       👤 Manage Users
                     </Link>
                   </DropdownMenuItem>
@@ -136,7 +144,7 @@ export default function Navbar() {
                     asChild
                     className="rounded-xl cursor-pointer"
                   >
-                    <Link href="/admin/topics" className="w-full">
+                    <Link href="/manage-topics" className="w-full">
                       📚 Manage Topics
                     </Link>
                   </DropdownMenuItem>
@@ -145,7 +153,7 @@ export default function Navbar() {
                     asChild
                     className="rounded-xl cursor-pointer"
                   >
-                    <Link href="/admin/lessons" className="w-full">
+                    <Link href="/manage-lessons" className="w-full">
                       🎥 Manage Lessons
                     </Link>
                   </DropdownMenuItem>
@@ -154,7 +162,7 @@ export default function Navbar() {
                     asChild
                     className="rounded-xl cursor-pointer"
                   >
-                    <Link href="/admin/vocab-decks" className="w-full">
+                    <Link href="/manage-vocab-decks" className="w-full">
                       🧠 Manage Vocab Decks
                     </Link>
                   </DropdownMenuItem>
@@ -212,7 +220,7 @@ export default function Navbar() {
 
           {/* Auth */}
           <div className="ml-2 flex items-center gap-3">
-            {!isLoggedIn ? (
+            {isLoading ? null : !isLoggedIn ? (
               <Link
                 href="/login"
                 className="px-5 py-2 text-sm font-bold text-white rounded-xl bg-gradient-to-r from-[#88DF46] to-[#34DBC5] shadow-lg"
@@ -255,7 +263,10 @@ export default function Navbar() {
                     <DropdownMenuItem asChild className="rounded-xl">
                       <Link href="/profile">Profile</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="rounded-xl text-red-500">
+                    <DropdownMenuItem
+                      onClick={() => signOut({ callbackUrl: "/" })}
+                      className="rounded-xl text-red-500 cursor-pointer"
+                    >
                       <LogOut className="w-4 h-4 mr-2" /> Logout
                     </DropdownMenuItem>
                   </DropdownMenuContent>

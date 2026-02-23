@@ -16,6 +16,12 @@ export default function ReviewTabs() {
 
   return (
     <>
+    <div className="mb-8">
+      <h1 className="text-3xl font-black text-gray-900 mb-2">Your Reviews</h1>
+      <p className="text-gray-500">
+        Practice your listening and speaking skills with personalized reviews.
+      </p>
+    </div>
       {/* Tabs */}
       <div className="mb-8 flex gap-4">
         {tabs.map(({ key, label }) => (

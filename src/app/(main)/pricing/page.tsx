@@ -92,7 +92,6 @@ export default function PricingPage() {
     </div>
 
     <ul className="space-y-3 text-sm">
-      <li>✅ All Free plan features</li>
       <li>✅ Unlimited access to all lessons</li>
       <li>✅ Unlock all vocabulary decks</li>
       <li>✅ Priority support</li>
