@@ -47,12 +47,7 @@ const email = formData.get("email") as string;
       return { error: "Authentication failed." };
     }
 
-    // Redirect theo role
-    if (existingUser.role === "admin") {
-      redirect("/admin");
-    }
-
-    redirect("/dashboard");
+    redirect("/");
   } catch (error) {
     if (isRedirectError(error)) throw error;
 
