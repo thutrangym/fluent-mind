@@ -2,6 +2,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -17,31 +18,110 @@ enum UserTier {
   premium
 }
 
+enum CEFRLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
 model User {
-  id        String    @id @default(cuid())
-  name      String
-  email     String    @unique
-  password  String
-  image     String?
+  id       String  @id @default(cuid())
+  name     String
+  email    String  @unique
+  password String
+  image    String?
 
-  role      UserRole  @default(user)
-  tier      UserTier  @default(free)
-  level     String    @default("Beginner")
+  role  UserRole @default(user)
+  tier  UserTier @default(free)
+  level String   @default("Beginner")
 
-  stats     UserStats?
+  stats UserStats?
 
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  speechAttempts SpeechAttempt[]
+  videoHistories VideoHistory[]
 }
 
 model UserStats {
+  id     String @id @default(cuid())
+  userId String @unique
+
+  streak    Int    @default(0)
+  videos    Int    @default(0)
+  rank      Int    @default(0)
+  studyTime String @default("0h 0m")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Topic {
   id        String   @id @default(cuid())
-  userId    String   @unique
+  title     String?
+  createdAt DateTime @default(now())
 
-  streak    Int      @default(0)
-  videos    Int      @default(0)
-  rank      Int      @default(0)
-  studyTime String   @default("0h 0m")
+  videos Video[]
+}
 
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Video {
+  id             String         @id @default(cuid())
+  title          String?
+  url            String?
+  youtubeId      String         @unique
+  topicId        String?
+  level          CEFRLevel      @default(A1)
+  videoHistories VideoHistory[]
+  createdAt      DateTime       @default(now())
+
+  topic Topic? @relation(fields: [topicId], references: [id])
+
+  subtitles SubtitleSentence[]
+}
+
+model VideoHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  videoId   String
+  progress  Float    @default(0)
+  lastTime  Float    @default(0)
+  watchedAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id])
+  video Video @relation(fields: [videoId], references: [id])
+
+  @@unique([userId, videoId])
+}
+
+model SubtitleSentence {
+  id        String @id @default(cuid())
+  videoId   String
+  startTime Float
+  endTime   Float
+  text      String
+
+  video          Video           @relation(fields: [videoId], references: [id])
+  speechAttempts SpeechAttempt[]
+}
+
+model SpeechAttempt {
+  id String @id @default(cuid())
+
+  userId     String
+  subtitleId String
+
+  audioUrl String
+
+  transcript String
+  reference  String
+
+  wer   Float
+  score Float
+
+  createdAt DateTime @default(now())
+
+  user     User             @relation(fields: [userId], references: [id])
+  subtitle SubtitleSentence @relation(fields: [subtitleId], references: [id])
 }

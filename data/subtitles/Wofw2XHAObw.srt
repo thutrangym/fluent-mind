@@ -1,0 +1,691 @@
+1
+00:00:00,000 --> 00:00:01,684
+What is your English level right now?
+
+2
+00:00:01,684 --> 00:00:03,200
+Let's find out.
+
+3
+00:00:03,200 --> 00:00:06,578
+In this video, I'm going to ask you 30 questions.
+
+4
+00:00:06,578 --> 00:00:09,339
+Keep track of how many you answer correctly
+
+5
+00:00:09,339 --> 00:00:15,040
+because by the end, you'll know your CEFR English level from beginner to advanced.
+
+6
+00:00:15,040 --> 00:00:16,440
+Let's get started.
+
+7
+00:00:16,440 --> 00:00:18,843
+The first 10 questions are beginner level.
+
+8
+00:00:18,843 --> 00:00:21,483
+For each question, you'll see three sentences.
+
+9
+00:00:21,483 --> 00:00:23,923
+Choose the one that is grammatically correct.
+
+10
+00:00:23,923 --> 00:00:24,845
+Ready?
+
+11
+00:00:26,218 --> 00:00:27,495
+Question one.
+
+12
+00:00:27,495 --> 00:00:30,420
+Catherine don't like spicy food.
+
+13
+00:00:30,420 --> 00:00:32,980
+Catherine isn't like spicy food.
+
+14
+00:00:32,980 --> 00:00:35,160
+Catherine doesn't like spicy food.
+
+15
+00:00:40,805 --> 00:00:44,664
+The correct answer is Catherine doesn't like spicy food.
+
+16
+00:00:44,664 --> 00:00:46,505
+Question two.
+
+17
+00:00:46,505 --> 00:00:48,585
+This car is bigger than that one.
+
+18
+00:00:48,585 --> 00:00:50,905
+This car is more big than that one.
+
+19
+00:00:50,905 --> 00:00:53,725
+This car is the biggest that one.
+
+20
+00:00:58,430 --> 00:01:02,930
+The correct answer is this car is bigger than that one.
+
+21
+00:01:02,930 --> 00:01:05,010
+Question three.
+
+22
+00:01:05,010 --> 00:01:06,690
+Alex has a meeting in Monday.
+
+23
+00:01:06,690 --> 00:01:08,925
+Alex has a meeting on Monday.
+
+24
+00:01:08,925 --> 00:01:11,104
+Alex has a meeting at Monday.
+
+25
+00:01:15,065 --> 00:01:19,485
+The correct answer is, Alex has a meeting on Monday.
+
+26
+00:01:19,485 --> 00:01:21,340
+Question four.
+
+27
+00:01:21,340 --> 00:01:23,340
+Leo bought an umbrella.
+
+28
+00:01:23,340 --> 00:01:25,420
+Leo bought an umbrella.
+
+29
+00:01:25,420 --> 00:01:27,440
+Leo bought umbrella.
+
+30
+00:01:31,080 --> 00:01:35,260
+The correct answer is Leo bought an umbrella.
+
+31
+00:01:35,260 --> 00:01:37,055
+Question five.
+
+32
+00:01:37,055 --> 00:01:39,135
+I think it rains tonight.
+
+33
+00:01:39,135 --> 00:01:41,455
+I think it will rain tonight.
+
+34
+00:01:41,455 --> 00:01:43,395
+I think it is raining tonight.
+
+35
+00:01:48,480 --> 00:01:52,480
+The correct answer is, I think it will rain tonight.
+
+36
+00:01:52,480 --> 00:01:54,080
+Question six.
+
+37
+00:01:54,080 --> 00:01:56,020
+That backpack is mine.
+
+38
+00:01:56,300 --> 00:01:58,100
+That backpack is to me.
+
+39
+00:01:58,380 --> 00:01:59,780
+That backpack is mine.
+
+40
+00:02:04,235 --> 00:02:08,995
+The correct answer is, that backpack is mine.
+
+41
+00:02:09,035 --> 00:02:10,354
+Question seven.
+
+42
+00:02:10,555 --> 00:02:12,675
+Did you watch the movie yesterday?
+
+43
+00:02:13,035 --> 00:02:14,915
+Did you watch the movie yesterday?
+
+44
+00:02:16,140 --> 00:02:18,340
+Have you watched the movie yesterday?
+
+45
+00:02:22,460 --> 00:02:27,059
+The correct answer is, did you watch the movie yesterday?
+
+46
+00:02:28,155 --> 00:02:29,395
+Question eight.
+
+47
+00:02:29,355 --> 00:02:31,315
+There is some rice in the bowl.
+
+48
+00:02:32,155 --> 00:02:34,275
+There are some rices in the bowl.
+
+49
+00:02:34,955 --> 00:02:36,754
+There is many rice in the bowl.
+
+50
+00:02:42,730 --> 00:02:46,610
+The correct answer is, there is some rice in the bowl.
+
+51
+00:02:47,370 --> 00:02:48,510
+Question nine.
+
+52
+00:02:48,510 --> 00:02:50,290
+Him called she last night.
+
+53
+00:02:50,570 --> 00:02:52,050
+He called her last night.
+
+54
+00:02:53,075 --> 00:02:54,875
+Her called him last night.
+
+55
+00:02:59,155 --> 00:03:03,755
+The correct answer is he called her last night.
+
+56
+00:03:04,930 --> 00:03:06,250
+Question 10.
+
+57
+00:03:06,210 --> 00:03:08,650
+They have studied English for five years.
+
+58
+00:03:08,930 --> 00:03:11,530
+They have studied English since five years.
+
+59
+00:03:12,050 --> 00:03:14,169
+They have studied English from five years.
+
+60
+00:03:19,635 --> 00:03:24,155
+The correct answer is they have studied English for five years.
+
+61
+00:03:24,915 --> 00:03:26,315
+Congratulations.
+
+62
+00:03:26,355 --> 00:03:29,195
+You've now finished the beginner section of the test.
+
+63
+00:03:29,155 --> 00:03:32,555
+If you got seven or more correct, you're likely a one.
+
+64
+00:03:32,740 --> 00:03:35,739
+If you got nine or more, you're at least a two.
+
+65
+00:03:36,020 --> 00:03:37,420
+Let's continue.
+
+66
+00:03:37,540 --> 00:03:40,220
+The next 10 questions are intermediate level.
+
+67
+00:03:41,860 --> 00:03:43,100
+Question one.
+
+68
+00:03:43,300 --> 00:03:45,500
+You have must to complete your homework.
+
+69
+00:03:46,465 --> 00:03:48,825
+You must completing your homework.
+
+70
+00:03:49,345 --> 00:03:51,225
+You must complete your homework.
+
+71
+00:03:56,625 --> 00:04:00,265
+The correct answer is you must complete your homework.
+
+72
+00:04:00,545 --> 00:04:01,545
+Question two.
+
+73
+00:04:02,410 --> 00:04:04,769
+Lena never gives attention in class.
+
+74
+00:04:05,130 --> 00:04:07,570
+Lena never pays attention in class.
+
+75
+00:04:07,930 --> 00:04:10,290
+Lena never throws attention in class.
+
+76
+00:04:14,745 --> 00:04:20,145
+The correct answer is Lina never pays attention in class.
+
+77
+00:04:21,385 --> 00:04:22,704
+Question three.
+
+78
+00:04:22,905 --> 00:04:25,025
+Have you ever visited Europe?
+
+79
+00:04:25,224 --> 00:04:27,185
+Did you ever visited Europe?
+
+80
+00:04:27,224 --> 00:04:29,025
+Have you ever visiting Europe?
+
+81
+00:04:33,880 --> 00:04:38,560
+The correct answer is, have you ever visited Europe?
+
+82
+00:04:39,560 --> 00:04:40,800
+Question four.
+
+83
+00:04:41,159 --> 00:04:43,760
+If we leave early, we'd arrive on time.
+
+84
+00:04:44,674 --> 00:04:47,435
+If we leave early, we'll arrive on time.
+
+85
+00:04:47,875 --> 00:04:50,555
+If we leave early, we'd have arrived on time.
+
+86
+00:04:56,870 --> 00:05:01,310
+The correct answer, if we leave early, we'll arrive on time.
+
+87
+00:05:01,989 --> 00:05:03,210
+Question five.
+
+88
+00:05:03,210 --> 00:05:05,950
+Emma speaks English fluent than her brother.
+
+89
+00:05:06,630 --> 00:05:09,630
+Emma speaks English more fluent than her brother.
+
+90
+00:05:10,585 --> 00:05:13,905
+Emma speaks English more fluently than her brother.
+
+91
+00:05:19,465 --> 00:05:24,205
+The correct answer is Emma speaks English more fluently than her brother.
+
+92
+00:05:24,205 --> 00:05:25,185
+Question six.
+
+93
+00:05:26,150 --> 00:05:28,490
+To read books is my favorite hobby.
+
+94
+00:05:28,490 --> 00:05:30,750
+Reading books is my favorite hobby.
+
+95
+00:05:30,789 --> 00:05:33,310
+To reading books is my favorite hobby.
+
+96
+00:05:38,685 --> 00:05:43,045
+The correct answer is reading books is my favorite hobby.
+
+97
+00:05:44,044 --> 00:05:45,365
+Question seven.
+
+98
+00:05:45,724 --> 00:05:48,065
+My partner hardly never eats meat.
+
+99
+00:05:48,065 --> 00:05:50,465
+My partner never hardly eats meat.
+
+100
+00:05:50,465 --> 00:05:52,645
+My partner hardly ever eats meat.
+
+101
+00:05:56,950 --> 00:06:01,949
+The correct answer is my partner hardly ever eats meat.
+
+102
+00:06:02,549 --> 00:06:03,790
+Question eight.
+
+103
+00:06:04,150 --> 00:06:06,270
+Alex often forgets to lock the door.
+
+104
+00:06:06,844 --> 00:06:09,605
+Alex often forgets locking the door.
+
+105
+00:06:09,804 --> 00:06:12,565
+Alex often forgets to locking the door.
+
+106
+00:06:17,325 --> 00:06:21,044
+The correct answer is Alex often forgets to lock the door.
+
+107
+00:06:22,010 --> 00:06:23,329
+Question nine.
+
+108
+00:06:23,690 --> 00:06:26,290
+Daniel should have tell his parents sooner.
+
+109
+00:06:27,049 --> 00:06:30,370
+Daniel should have been telling his parents sooner.
+
+110
+00:06:30,570 --> 00:06:33,010
+Daniel should have told his parents sooner.
+
+111
+00:06:38,185 --> 00:06:42,545
+The correct answer is, Daniel should have told his parents sooner.
+
+112
+00:06:42,984 --> 00:06:44,305
+Question 10.
+
+113
+00:06:44,424 --> 00:06:46,385
+Could you give me a lift to the station?
+
+114
+00:06:47,049 --> 00:06:49,730
+Could you give me to the station a lift?
+
+115
+00:06:50,090 --> 00:06:52,530
+Could you give me a lift at the station?
+
+116
+00:06:57,609 --> 00:07:01,250
+The correct answer is, could you give me a lift to the station?
+
+117
+00:07:02,044 --> 00:07:03,184
+Great job.
+
+118
+00:07:03,184 --> 00:07:05,685
+You've now completed the intermediate section.
+
+119
+00:07:05,724 --> 00:07:09,505
+If you got seven or more correct, you're likely b one.
+
+120
+00:07:09,505 --> 00:07:13,104
+If you got nine or more correct, you're likely b two.
+
+121
+00:07:13,104 --> 00:07:14,885
+Now, let's move to the final section.
+
+122
+00:07:15,479 --> 00:07:18,320
+These last 10 questions are advanced level.
+
+123
+00:07:18,679 --> 00:07:19,920
+Question one.
+
+124
+00:07:20,120 --> 00:07:22,240
+It's freezing outside, isn't it?
+
+125
+00:07:22,280 --> 00:07:24,400
+It's freezing outside, isn't he?
+
+126
+00:07:24,520 --> 00:07:26,239
+It freezing outside, isn't it?
+
+127
+00:07:31,205 --> 00:07:35,005
+The correct answer is, it's freezing outside, isn't it?
+
+128
+00:07:35,445 --> 00:07:36,685
+Question two.
+
+129
+00:07:36,645 --> 00:07:42,125
+The author's explanation was deliberately, leaving readers to draw their own conclusions.
+
+130
+00:07:42,245 --> 00:07:45,740
+Obvious, ambiguous, clear.
+
+131
+00:07:49,620 --> 00:07:53,340
+The correct answer is ambiguous.
+
+132
+00:07:53,940 --> 00:07:55,180
+Question three.
+
+133
+00:07:55,140 --> 00:08:00,945
+By this time next year, she, at her new job for five years, will have been working.
+
+134
+00:08:01,385 --> 00:08:02,625
+Will work.
+
+135
+00:08:02,905 --> 00:08:03,825
+Worked?
+
+136
+00:08:07,864 --> 00:08:11,585
+The correct answer is, will have been working.
+
+137
+00:08:12,190 --> 00:08:13,590
+Question four.
+
+138
+00:08:13,870 --> 00:08:21,190
+Amelia's dream of becoming a singer never quite turned up, panned out, kicked off.
+
+139
+00:08:26,604 --> 00:08:29,204
+The correct answer is panned out.
+
+140
+00:08:29,405 --> 00:08:30,725
+Question five.
+
+141
+00:08:30,765 --> 00:08:34,724
+To have wasted two hours, Mike finally started his essay.
+
+142
+00:08:34,684 --> 00:08:38,324
+He had wasted two hours, Mike finally started his essay.
+
+143
+00:08:38,699 --> 00:08:42,659
+Having wasted two hours, Mike finally started his essay.
+
+144
+00:08:46,140 --> 00:08:52,980
+The correct answer is, having wasted two hours, Mike finally started his essay.
+
+145
+00:08:53,755 --> 00:08:54,995
+Question six.
+
+146
+00:08:55,115 --> 00:08:59,235
+The guide suggests booking your tickets at least three months.
+
+147
+00:09:00,155 --> 00:09:01,314
+Ego.
+
+148
+00:09:01,995 --> 00:09:03,235
+In advance.
+
+149
+00:09:03,834 --> 00:09:04,675
+Beforehand.
+
+150
+00:09:09,850 --> 00:09:12,770
+The correct answer is in advance.
+
+151
+00:09:13,689 --> 00:09:14,850
+Question seven.
+
+152
+00:09:15,050 --> 00:09:17,330
+Jordan is such an inspiring individual.
+
+153
+00:09:17,954 --> 00:09:20,795
+Jordan is such inspiring an individual.
+
+154
+00:09:20,915 --> 00:09:23,515
+Jordan is so an inspiring individual.
+
+155
+00:09:28,675 --> 00:09:32,875
+The correct answer is Jordan is such an inspiring individual.
+
+156
+00:09:34,319 --> 00:09:35,480
+Question eight.
+
+157
+00:09:35,520 --> 00:09:42,920
+After reviewing the evidence, the manager asked the team decision, report, verdict.
+
+158
+00:09:48,555 --> 00:09:50,994
+The correct answer is decision.
+
+159
+00:09:52,074 --> 00:09:53,395
+Question nine.
+
+160
+00:09:53,515 --> 00:10:01,395
+When Liam received the promotion, he was absolutely assio, ecstatic, annoyed, confused.
+
+161
+00:10:06,610 --> 00:10:08,810
+The correct answer ecstatic.
+
+162
+00:10:09,490 --> 00:10:10,730
+Question 10.
+
+163
+00:10:10,689 --> 00:10:17,765
+No matter how difficult the project appears, keep in mind that you are beats Confident.
+
+164
+00:10:17,965 --> 00:10:19,205
+Unprepared.
+
+165
+00:10:19,245 --> 00:10:20,325
+Careless.
+
+166
+00:10:26,605 --> 00:10:28,805
+The correct answer is confident.
+
+167
+00:10:29,230 --> 00:10:30,550
+Congratulations.
+
+168
+00:10:30,590 --> 00:10:33,410
+You've successfully completed the advanced level.
+
+169
+00:10:33,410 --> 00:10:36,950
+If you got seven or more correct, you're likely c one.
+
+170
+00:10:36,990 --> 00:10:39,510
+If you got nine or more, you're probably c two.
+
+171
+00:10:40,084 --> 00:10:42,264
+Great job for completing the test.
+
+172
+00:10:42,264 --> 00:10:48,284
+If you enjoyed this video, don't forget to like, subscribe and share it with someone learning English.
+
+173
+00:10:48,483 --> 00:10:51,544
+Thanks for watching and I'll see you in the next one.

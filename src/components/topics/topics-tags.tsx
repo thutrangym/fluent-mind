@@ -1,34 +1,32 @@
 "use client";
 
-const tags = [
-  "Movie short clip",
-  "Daily English Conversation",
-  "Learning resources",
-  "Listening Time (Shadowing)",
-  "IELTS Listening",
-  "US UK songs",
-  "TOEIC Listening",
-  "Entertainment",
-  "BBC learning english",
-  "VOA Learning English",
-  "Toefl Listening",
-  "Science and Facts",
-  "Fairy Tales",
-  "IPA",
-  "News",
-  "Vietnam Today",
-  "TED",
-  "Travel vlog",
-  "Animals and wildlife",
-  "Business English",
-];
+import { useEffect, useState } from "react";
+
+type Topic = {
+  id: string;
+  title: string;
+};
 
 export default function TopicsTags() {
+
+  const [topics, setTopics] = useState<Topic[]>([]);
+
+  useEffect(() => {
+    fetch("/api/topics")
+      .then(res => res.json())
+      .then(data => setTopics(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  if (!topics.length) {
+    return <div className="text-sm text-gray-400">Loading topics...</div>;
+  }
+
   return (
     <div className="flex flex-wrap gap-3">
-      {tags.map(tag => (
+      {topics.map(topic => (
         <button
-          key={tag}
+          key={topic.id}
           className="
             rounded-full border border-primary/30
             px-4 py-2 text-sm font-medium
@@ -39,7 +37,7 @@ export default function TopicsTags() {
             hover:text-[#2e7d32]
           "
         >
-          #{tag}
+          #{topic.title}
         </button>
       ))}
     </div>

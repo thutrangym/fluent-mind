@@ -1,0 +1,207 @@
+1
+00:00:00,000 --> 00:00:00,560
+Hey.
+
+2
+00:00:00,560 --> 00:00:04,720
+I need to reorder some flyers for my cafe's grand reopening next month.
+
+3
+00:00:04,720 --> 00:00:06,279
+Can you help me with that?
+
+4
+00:00:06,200 --> 00:00:07,879
+Sure. I can.
+
+5
+00:00:07,800 --> 00:00:09,239
+Let me check.
+
+6
+00:00:09,240 --> 00:00:11,360
+Oh, you're with the cozy corner. Right?
+
+7
+00:00:11,360 --> 00:00:14,119
+Didn't I design some flyers for you last year?
+
+8
+00:00:14,040 --> 00:00:15,345
+Yep. That's right.
+
+9
+00:00:15,345 --> 00:00:20,224
+But we've updated our logo and added a new menu so I'll need the design to reflect that.
+
+10
+00:00:20,224 --> 00:00:21,105
+Got it.
+
+11
+00:00:21,105 --> 00:00:24,365
+I can have those updated and printed by the end of the week.
+
+12
+00:00:24,365 --> 00:00:27,145
+By the way, would you like to see some paper options?
+
+13
+00:00:27,240 --> 00:00:29,900
+Maybe something sturdier than last time?
+
+14
+00:00:29,900 --> 00:00:31,520
+Oh, that's a great idea.
+
+15
+00:00:31,520 --> 00:00:32,840
+Let's go for it.
+
+16
+00:00:33,080 --> 00:00:36,540
+We need to come up with a new menu item for next month.
+
+17
+00:00:36,540 --> 00:00:39,389
+The chefs are suggesting something light and healthy,
+
+18
+00:00:39,389 --> 00:00:42,735
+like a quinoa salad with grilled vegetables.
+
+19
+00:00:42,735 --> 00:00:47,095
+That sounds nice, but we already have a few healthy options on the menu.
+
+20
+00:00:47,095 --> 00:00:49,577
+Maybe we should go for something more exciting,
+
+21
+00:00:49,577 --> 00:00:52,415
+like a fusion dish with bold flavors.
+
+22
+00:00:52,415 --> 00:00:54,214
+I thought about that too.
+
+23
+00:00:54,214 --> 00:00:56,875
+How about a spicy Korean chicken wrap?
+
+24
+00:00:56,879 --> 00:01:00,960
+It could be a unique twist and still keep it relatively healthy.
+
+25
+00:01:00,879 --> 00:01:02,640
+I love that idea.
+
+26
+00:01:02,720 --> 00:01:05,799
+Let's pitch it to the team during the menu meeting later.
+
+27
+00:01:05,799 --> 00:01:07,520
+I'm sure they'll be on board.
+
+28
+00:01:08,720 --> 00:01:09,719
+Hi, Ben.
+
+29
+00:01:09,719 --> 00:01:11,359
+It's Lisa from City Rentals.
+
+30
+00:01:11,265 --> 00:01:15,624
+Has Unit 305 been inspected for any maintenance issues yet?
+
+31
+00:01:15,624 --> 00:01:16,925
+Not completely.
+
+32
+00:01:16,925 --> 00:01:20,505
+The electrician was supposed to come yesterday to fix a faulty light in the living room
+
+33
+00:01:20,505 --> 00:01:22,384
+but had to reschedule for tomorrow.
+
+34
+00:01:22,625 --> 00:01:24,424
+We've checked the plumbing and heating,
+
+35
+00:01:24,424 --> 00:01:28,059
+and both are fine, but we're still waiting on the electrical work to be completed.
+
+36
+00:01:28,220 --> 00:01:29,939
+That's cutting it close.
+
+37
+00:01:29,939 --> 00:01:34,240
+The new tenants are moving in next Tuesday, and I really don't want any delays.
+
+38
+00:01:34,240 --> 00:01:36,320
+It's important we stay on schedule.
+
+39
+00:01:36,320 --> 00:01:37,459
+I understand.
+
+40
+00:01:37,459 --> 00:01:41,740
+I've already spoken to the electrician, and they assured me everything will be done by Friday.
+
+41
+00:01:41,905 --> 00:01:44,544
+We'll have it sorted in time for the move in.
+
+42
+00:01:46,065 --> 00:01:47,305
+Good afternoon.
+
+43
+00:01:47,305 --> 00:01:50,304
+This is Daniel Mitchell from GreenTech Solutions.
+
+44
+00:01:50,225 --> 00:01:53,105
+I'm calling to place an order for some equipment.
+
+45
+00:01:53,025 --> 00:01:56,704
+We need 50 laser printers and 200 ink cartridges, please.
+
+46
+00:01:56,730 --> 00:02:00,569
+The product codes are LP10 and IC25.
+
+47
+00:02:00,570 --> 00:02:02,610
+Thank you for the order, mister Mitchell.
+
+48
+00:02:02,610 --> 00:02:05,589
+I'm happy to let you know that we have a promotion going on right now.
+
+49
+00:02:05,589 --> 00:02:11,250
+You'll get free shipping for orders over $500, and the ink cartridges are currently 10% off.
+
+50
+00:02:11,250 --> 00:02:12,730
+That's fantastic news.
+
+51
+00:02:12,785 --> 00:02:15,224
+I'll pass it on to my purchasing department.
+
+52
+00:02:15,224 --> 00:02:16,745
+They'll be happy about the savings.

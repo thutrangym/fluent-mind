@@ -3,25 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, Flame, Clock, Trophy } from "lucide-react";
+import { User } from "@prisma/client"
 
-type User = {
-  name: string;
-  email: string;
-  image?: string;
-  role: "user" | "admin";
-  tier: "free" | "premium";
-  level: string;
-  stats: {
-    streak: number;
-    videos: number;
-    rank: number;
-    studyTime: string;
-  };
-};
+type Props = {
+  user: User | null
+}
 
-export default function ProfileClient({ user }: { user: User }) {
-  const isFree = user.tier === "free";
-
+export default function ProfileClient({ user }: Props) {
+const isFree = user?.tier === "free";
   return (
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-8">
 
@@ -29,7 +18,7 @@ export default function ProfileClient({ user }: { user: User }) {
       <section className="rounded-3xl bg-gradient-to-r from-[#34DBC5]/10 to-[#88DF46]/10 p-6 flex flex-col md:flex-row items-center gap-6">
         <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
           <Image
-            src={user.image || "/avatar-placeholder.png"}
+            src={user?.image || "/avatar-placeholder.png"}
             alt="avatar"
             fill
             className="object-cover"
@@ -37,11 +26,11 @@ export default function ProfileClient({ user }: { user: User }) {
         </div>
 
         <div className="flex-1 text-center md:text-left space-y-1">
-          <h1 className="text-2xl font-black">{user.name}</h1>
-          <p className="text-sm text-gray-500">{user.email}</p>
+          <h1 className="text-2xl font-black">{user?.name}</h1>
+          <p className="text-sm text-gray-500">{user?.email}</p>
           <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2">
             <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-600">
-              Level {user.level}
+              Level {user?.level}
             </span>
             <span
               className={`px-3 py-1 rounded-full text-xs font-bold ${
@@ -50,7 +39,7 @@ export default function ProfileClient({ user }: { user: User }) {
                   : "bg-amber-100 text-amber-700"
               }`}
             >
-              {user.tier.toUpperCase()}
+              {user?.tier.toUpperCase()}
             </span>
           </div>
         </div>

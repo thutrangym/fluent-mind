@@ -1,0 +1,155 @@
+1
+00:00:00,000 --> 00:00:02,180
+Good afternoon, mister Patel.
+
+2
+00:00:02,180 --> 00:00:05,000
+This is Gina from the HR department.
+
+3
+00:00:05,080 --> 00:00:09,959
+I wanted to go over some details about your recent travel reimbursement request.
+
+4
+00:00:10,040 --> 00:00:14,759
+I understand you were attending the Tech Innovations Conference in Berlin last month.
+
+5
+00:00:15,295 --> 00:00:20,255
+Thank you for submitting the receipts for your flights, lodging, and meals.
+
+6
+00:00:20,255 --> 00:00:24,334
+However, there seems to be an issue with one of the hotel charges.
+
+7
+00:00:24,255 --> 00:00:28,411
+Our company policy covers only up to $150 per night,
+
+8
+00:00:28,411 --> 00:00:31,030
+and it looks like your hotel exceeded that.
+
+9
+00:00:31,030 --> 00:00:33,470
+Let's meet in person to clarify things.
+
+10
+00:00:33,470 --> 00:00:37,110
+Could you drop by my office tomorrow afternoon around 3PM?
+
+11
+00:00:37,110 --> 00:00:39,410
+That way, we can settle everything quickly.
+
+12
+00:00:39,490 --> 00:00:40,529
+Thanks.
+
+13
+00:00:42,210 --> 00:00:44,015
+Hello, mister Robson.
+
+14
+00:00:44,015 --> 00:00:50,115
+This is June Brown, your financial adviser, calling about your investment portfolio review.
+
+15
+00:00:50,115 --> 00:00:52,958
+I was looking over the account details you provided,
+
+16
+00:00:52,958 --> 00:00:56,110
+and I noticed that some information is missing.
+
+17
+00:00:56,110 --> 00:01:02,729
+Specifically, I don't have the latest updates on the income and valuations from your real estate investments.
+
+18
+00:01:02,809 --> 00:01:08,889
+These details are the missing pieces of the puzzle for a complete analysis of your financial situation.
+
+19
+00:01:09,205 --> 00:01:15,044
+Could you please email me the recent appraisals and income statements from your rental properties?
+
+20
+00:01:14,965 --> 00:01:20,244
+I won't be able to finalize the review of your investment portfolio without them.
+
+21
+00:01:22,580 --> 00:01:30,899
+Welcome, everyone, to this orientation session for our institute's certification course in graphic design.
+
+22
+00:01:30,820 --> 00:01:34,979
+I'm Alex Martin, your instructor for the next few weeks.
+
+23
+00:01:35,055 --> 00:01:38,574
+Before we begin, I have some news to share.
+
+24
+00:01:38,575 --> 00:01:47,135
+Once you complete the course, you'll each have the opportunity to have a one on one session with a career adviser at no additional cost.
+
+25
+00:01:47,250 --> 00:01:52,129
+It's a wonderful benefit for you all, so I encourage you to make use of it.
+
+26
+00:01:52,370 --> 00:01:55,630
+Now let's begin our first session.
+
+27
+00:01:55,630 --> 00:02:01,809
+Please log in to our training system using the username and password provided on your name tags.
+
+28
+00:02:04,375 --> 00:02:08,074
+Floyd, it seems there's an issue with your project report from last week.
+
+29
+00:02:08,074 --> 00:02:08,894
+Oh, really?
+
+30
+00:02:08,894 --> 00:02:09,914
+What's the problem?
+
+31
+00:02:09,914 --> 00:02:15,894
+Diana from the quality control team mentioned that the report lacks the required detailed analysis for the third quarter.
+
+32
+00:02:16,200 --> 00:02:17,519
+That's strange.
+
+33
+00:02:17,519 --> 00:02:21,000
+I remember including that analysis, but I'll check it again.
+
+34
+00:02:21,240 --> 00:02:22,140
+Okay.
+
+35
+00:02:22,140 --> 00:02:24,840
+In the meantime, you'll need to draft an updated version.
+
+36
+00:02:24,989 --> 00:02:29,169
+Normally, Diana handles this, but she's on a training course with James right now.
+
+37
+00:02:29,169 --> 00:02:33,588
+You should reach out to the project coordinator to find out who can review the updated report.
+
+38
+00:02:33,588 --> 00:02:34,449
+Got it.
+
+39
+00:02:34,449 --> 00:02:35,909
+I'll take care of it right away.

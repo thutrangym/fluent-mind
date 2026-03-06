@@ -98,7 +98,7 @@ const isPremium = tier === "premium";
 
             {moreLinks.length > 0 && (
               <DropdownMenu>
-                <DropdownMenuTrigger className="px-3 py-1.5 text-sm font-semibold flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-[#34DBC5] outline-none">
+                <DropdownMenuTrigger className="px-3 py-1.5 text-sm font-semibold flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-blue outline-none">
                   More <ChevronDown className="w-4 h-4 opacity-50" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent

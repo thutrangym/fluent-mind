@@ -4,7 +4,8 @@ export default function LevelBadge({ level }: { level: string }) {
     A2: "bg-green-600",
     B1: "bg-blue-500",
     B2: "bg-purple-500",
-    PRO: "bg-yellow-500",
+    C1: "bg-yellow-500",
+    C2: "bg-orange-500",
   };
 
   return (
