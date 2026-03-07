@@ -90,7 +90,7 @@ export default function Home() {
             ].map(([title, desc], i) => (
               <div
                 key={i}
-                className="rounded-xl border border-gray-200 p-6 dark:border-gray-700"
+                className="rounded-xl bg-white border border-gray-200 p-6 dark:border-gray-700"
               >
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {title}

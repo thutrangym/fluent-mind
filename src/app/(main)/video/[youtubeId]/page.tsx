@@ -28,7 +28,7 @@ export default async function VideoPage({ params }: Props) {
       <div className="max-w-6xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">{video.title}</h1>
 
-      <VideoTabs youtubeId={video.youtubeId} subtitles={video.subtitles} />
+      <VideoTabs youtubeId={video.youtubeId} subtitles={video.subtitles} videoId={video.id} />
       </div>
 
     </main>
