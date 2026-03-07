@@ -130,7 +130,7 @@ export default function ShadowingMode({ youtubeId, subtitles }: Props) {
   {/* VIDEO SECTION - BORDERED CONTAINER (Same as Dictation) */}
   <div className="flex-1 transition-all duration-500">
     <div className="sticky top-10 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-green-900/5 bg-white">
-      <VideoPlayer youtubeId={youtubeId} onReady={setPlayer} />
+      <VideoPlayer videoId={videoId} youtubeId={youtubeId} onReady={setPlayer} />
     </div>
   </div>
 

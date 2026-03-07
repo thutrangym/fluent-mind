@@ -69,7 +69,7 @@ model UserProgress {
   id        String   @id @default(cuid())
 
   userId    String
-  videoId   String
+  youtubeId String
 
   progress  Int      @default(0) //
   completed Boolean  @default(false)
@@ -79,9 +79,8 @@ model UserProgress {
   createdAt DateTime @default(now())
 
   user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  video Video @relation(fields: [videoId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, videoId])
+  video Video @relation(fields: [youtubeId], references: [youtubeId])
+  @@unique([userId, youtubeId])
 }
 
 model Topic {

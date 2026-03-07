@@ -6,11 +6,12 @@ import { YouTubePlayer } from "react-youtube";
 import VideoPlayer from "./VideoPlayer";
 
 interface Props {
+  videoId: string
   youtubeId: string;
   subtitles: Subtitle[];
 }
 
-export default function ShadowingMode({ youtubeId, subtitles }: Props) {
+export default function ShadowingMode({ videoId, youtubeId, subtitles }: Props) {
   const [player, setPlayer] = useState<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
 
@@ -118,7 +119,7 @@ export default function ShadowingMode({ youtubeId, subtitles }: Props) {
     <div className="flex flex-col lg:flex-row gap-12 p-8 md:p-12 min-h-screen bg-[#FAFFF6] text-slate-800 font-sans">
       <div className="flex-1">
         <div className="sticky top-10 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-green-900/5 bg-white">
-          <VideoPlayer youtubeId={youtubeId} onReady={setPlayer} />
+          <VideoPlayer videoId={videoId} youtubeId={youtubeId} onReady={setPlayer} />
         </div>
       </div>
       <div className="flex-1 flex flex-col gap-8 max-w-xl mx-auto w-full">

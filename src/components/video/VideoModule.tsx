@@ -7,14 +7,17 @@ import SubtitleList from "./SubtitleList"
 import { YouTubePlayer } from "react-youtube"
 
 interface Props {
+  videoId: string
   youtubeId: string
   subtitles: Subtitle[]
+  lastTime?: number
 }
 
-export default function VideoModule({ youtubeId, subtitles }: Props) {
+export default function VideoModule({ videoId, youtubeId, subtitles, lastTime }: Props) {
   const [player, setPlayer] = useState<YouTubePlayer | null>(null)
   const [currentIndex, setCurrentIndex] = useState(-1)
-  
+
+
   useEffect(() => {
     if (!player) return
 
@@ -32,11 +35,10 @@ export default function VideoModule({ youtubeId, subtitles }: Props) {
       if (index !== -1 && time > subtitles[index].endTime) {
         player.pauseVideo()
       }
-
-    }, 200)
+    }, 5000)
 
     return () => clearInterval(interval)
-  }, [player, subtitles, currentIndex])
+  }, [player])
 
   const jumpTo = (time: number) => {
     if (!player) return
@@ -51,7 +53,9 @@ export default function VideoModule({ youtubeId, subtitles }: Props) {
       {/* Video */}
       <div className="lg:col-span-2">
         <VideoPlayer
+          videoId={videoId}
           youtubeId={youtubeId}
+          lastTime={lastTime}
           onReady={setPlayer}
         />
       </div>

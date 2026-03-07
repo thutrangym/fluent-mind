@@ -6,58 +6,68 @@ import ShadowingMode from "./ShadowingMode"
 import DictationMode from "./DictationMode"
 import { Subtitle } from "@/src/types/subtitle"
 
+type TabType = "video" | "shadowing" | "dictation"
+
 interface Props {
+  videoId: string
   youtubeId: string
   subtitles: Subtitle[]
+  lastTime?: number
 }
 
-export default function VideoTabs({ youtubeId, subtitles }: Props) {
-  const [tab, setTab] = useState<"video" | "shadowing" | "dictation">("video")
+export default function VideoTabs({ videoId, youtubeId, subtitles, lastTime }: Props) {
+  const [tab, setTab] = useState<TabType>("video")
+
+  const tabs: { key: TabType; label: string }[] = [
+    { key: "video", label: "Video" },
+    { key: "shadowing", label: "Shadowing" },
+    { key: "dictation", label: "Dictation" }
+  ]
 
   return (
     <div className="space-y-6">
 
       {/* Tabs */}
       <div className="flex gap-3 bg-gray-100 p-2 rounded-xl w-fit">
-        <button
-          onClick={() => setTab("video")}
-          className={`px-4 py-2 rounded-lg ${
-            tab === "video" ? "bg-green-500 text-white" : ""
-          }`}
-        >
-          Video
-        </button>
-
-        <button
-          onClick={() => setTab("shadowing")}
-          className={`px-4 py-2 rounded-lg ${
-            tab === "shadowing" ? "bg-green-500 text-white" : ""
-          }`}
-        >
-          Shadowing
-        </button>
-
-        <button
-          onClick={() => setTab("dictation")}
-          className={`px-4 py-2 rounded-lg ${
-            tab === "dictation" ? "bg-green-500 text-white" : ""
-          }`}
-        >
-          Dictation
-        </button>
+        {tabs.map((t) => (
+          <button
+            key={t.key}
+            onClick={() => setTab(t.key)}
+            className={`px-4 py-2 rounded-lg transition ${
+              tab === t.key
+                ? "bg-green-500 text-white"
+                : "text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
       </div>
 
       {/* Content */}
       {tab === "video" && (
-        <VideoModule youtubeId={youtubeId} subtitles={subtitles} />
+        <VideoModule
+          videoId={videoId}
+          youtubeId={youtubeId}
+          subtitles={subtitles}
+          
+        />
       )}
 
       {tab === "shadowing" && (
-        <ShadowingMode youtubeId={youtubeId} subtitles={subtitles} />
+        <ShadowingMode
+          videoId={videoId}
+          youtubeId={youtubeId}
+          subtitles={subtitles}
+        />
       )}
 
       {tab === "dictation" && (
-        <DictationMode youtubeId={youtubeId} subtitles={subtitles} />
+        <DictationMode
+          videoId={videoId}
+          youtubeId={youtubeId}
+          subtitles={subtitles}
+        />
       )}
     </div>
   )

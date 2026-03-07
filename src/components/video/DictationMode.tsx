@@ -6,11 +6,12 @@ import VideoPlayer from "./VideoPlayer";
 import { YouTubePlayer } from "react-youtube";
 
 interface Props {
+  videoId: string
   youtubeId: string;
   subtitles: Subtitle[];
 }
 
-export default function DictationMode({ youtubeId, subtitles }: Props) {
+export default function DictationMode({ videoId, youtubeId, subtitles }: Props) {
   const [player, setPlayer] = useState<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
@@ -82,7 +83,7 @@ export default function DictationMode({ youtubeId, subtitles }: Props) {
       {/* VIDEO SECTION - BORDERED CONTAINER */}
       <div className={`flex-1 transition-all duration-500 ${showVideo ? "opacity-100" : "opacity-5"}`}>
         <div className="sticky top-10 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-green-900/5 bg-white">
-          <VideoPlayer youtubeId={youtubeId} onReady={setPlayer} />
+          <VideoPlayer videoId={videoId} youtubeId={youtubeId} onReady={setPlayer} />
         </div>
       </div>
 
