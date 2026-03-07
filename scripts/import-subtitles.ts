@@ -29,7 +29,7 @@ function parseSRT(content: string) {
 
 async function main() {
 
-  const youtubeId = "nRtb0sogSkk"
+  const youtubeId = "ZAnS4B2KH1M" 
 
   const filePath = path.join("data/subtitles", `${youtubeId}.srt`)
 

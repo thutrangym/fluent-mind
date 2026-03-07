@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+
 }
 
 generator client {
@@ -40,53 +40,83 @@ model User {
 
   stats UserStats?
 
-  createdAt      DateTime        @default(now())
-  updatedAt      DateTime        @updatedAt
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
   speechAttempts SpeechAttempt[]
   videoHistories VideoHistory[]
+  vocabularies   UserVocabulary[]
+  videoProgress  UserProgress[]
+
+  comments Comment[]
+
+  leaderboard Leaderboard?
 }
 
 model UserStats {
   id     String @id @default(cuid())
   userId String @unique
 
-  streak    Int    @default(0)
-  videos    Int    @default(0)
-  rank      Int    @default(0)
-  studyTime String @default("0h 0m")
+  streak Int @default(0)
+  videos Int @default(0)
+
+  rank      Int @default(0)
+  studyTime Int @default(0)
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserProgress {
+  id        String   @id @default(cuid())
+
+  userId    String
+  videoId   String
+
+  progress  Int      @default(0) //
+  completed Boolean  @default(false)
+
+  lastTime  Int      @default(0) //
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  video Video @relation(fields: [videoId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, videoId])
 }
 
 model Topic {
   id        String   @id @default(cuid())
   title     String?
   createdAt DateTime @default(now())
-
+  description String?
   videos Video[]
 }
 
 model Video {
-  id             String         @id @default(cuid())
-  title          String?
-  url            String?
-  youtubeId      String         @unique
-  topicId        String?
-  level          CEFRLevel      @default(A1)
-  videoHistories VideoHistory[]
-  createdAt      DateTime       @default(now())
+  id        String    @id @default(cuid())
+  title     String?
+  url       String?
+  youtubeId String    @unique
+  topicId   String?
+  level     CEFRLevel @default(A1)
+  tier      UserTier @default(free)
+  createdAt DateTime  @default(now())
 
   topic Topic? @relation(fields: [topicId], references: [id])
 
-  subtitles SubtitleSentence[]
+  subtitles      SubtitleSentence[]
+  videoHistories VideoHistory[]
+  videoProgress  UserProgress[]
+  Comment Comment[]
 }
 
 model VideoHistory {
-  id        String   @id @default(cuid())
-  userId    String
-  videoId   String
-  progress  Float    @default(0)
-  lastTime  Float    @default(0)
+  id       String @id @default(cuid())
+  userId   String
+  videoId  String
+  progress Float  @default(0)
+  lastTime Float  @default(0)
+
   watchedAt DateTime @default(now())
 
   user  User  @relation(fields: [userId], references: [id])
@@ -124,4 +154,63 @@ model SpeechAttempt {
 
   user     User             @relation(fields: [userId], references: [id])
   subtitle SubtitleSentence @relation(fields: [subtitleId], references: [id])
+}
+
+model Vocabulary {
+  id String @id @default(cuid())
+
+  word          String
+  meaning       String
+  example       String?
+  pronunciation String?
+  tier          UserTier @default(free)
+  level CEFRLevel?
+
+  createdAt DateTime @default(now())
+
+  users UserVocabulary[]
+}
+
+model UserVocabulary {
+  id String @id @default(cuid())
+
+  userId       String
+  vocabularyId String
+
+  learned Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  user       User       @relation(fields: [userId], references: [id])
+  vocabulary Vocabulary @relation(fields: [vocabularyId], references: [id])
+
+  @@unique([userId, vocabularyId])
+}
+
+model Comment {
+  id String @id @default(cuid())
+
+  userId  String
+  videoId String?
+
+  content String
+
+  createdAt DateTime @default(now())
+
+  user  User   @relation(fields: [userId], references: [id])
+  video Video? @relation(fields: [videoId], references: [id])
+}
+
+model Leaderboard {
+  id String @id @default(cuid())
+
+  userId String @unique
+
+  xp    Int @default(0)
+  rank  Int @default(0)
+  level Int @default(1)
+
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
 }
