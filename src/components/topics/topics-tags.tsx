@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Topic = {
   id: string;
@@ -8,9 +9,8 @@ type Topic = {
 };
 
 export default function TopicsTags() {
-
   const [topics, setTopics] = useState<Topic[]>([]);
-
+  const router = useRouter();
   useEffect(() => {
     fetch("/api/topics")
       .then(res => res.json())
@@ -27,6 +27,7 @@ export default function TopicsTags() {
       {topics.map(topic => (
         <button
           key={topic.id}
+          onClick={() => router.push(`/topics/${topic.id}`)}
           className="
             rounded-full border border-primary/30
             px-4 py-2 text-sm font-medium

@@ -1,8 +1,10 @@
 import { prisma } from "@/src/lib/prisma";
 import { NextResponse, NextRequest } from "next/server";
 
-const beginnerLevels = ["A1", "A2"]
-const experiencedLevels = ["B1", "B2", "C1", "C2"]
+import { CEFRLevel } from "@prisma/client";
+
+const beginnerLevels: CEFRLevel[] = ["A1", "A2"]
+const experiencedLevels: CEFRLevel[] = ["B1", "B2", "C1", "C2"]
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)

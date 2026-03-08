@@ -27,6 +27,14 @@ enum CEFRLevel {
   C2
 }
 
+enum VocabularyStatus {
+  new
+  learning
+  reviewing
+  young
+  mastered
+}
+
 model User {
   id       String  @id @default(cuid())
   name     String
@@ -50,6 +58,7 @@ model User {
   comments Comment[]
 
   leaderboard Leaderboard?
+  createdDecks Deck[] @relation("UserDecks")
 }
 
 model UserStats {
@@ -155,6 +164,21 @@ model SpeechAttempt {
   subtitle SubtitleSentence @relation(fields: [subtitleId], references: [id])
 }
 
+model Deck {
+  id String @id @default(cuid())
+
+  userId      String?
+  creator     User?    @relation("UserDecks", fields: [userId], references: [id])
+
+  title       String
+  description String?
+
+  isPublic Boolean @default(true)
+
+  createdAt DateTime @default(now())
+
+  vocabularies Vocabulary[]
+}
 model Vocabulary {
   id String @id @default(cuid())
 
@@ -162,23 +186,35 @@ model Vocabulary {
   meaning       String
   example       String?
   pronunciation String?
+
   tier          UserTier @default(free)
   level CEFRLevel?
+
+  deckId String?
+  deck   Deck? @relation(fields: [deckId], references: [id])
 
   createdAt DateTime @default(now())
 
   users UserVocabulary[]
 }
-
 model UserVocabulary {
   id String @id @default(cuid())
 
   userId       String
   vocabularyId String
 
-  learned Boolean @default(false)
+  status VocabularyStatus @default(new)
+
+  reviewCount  Int @default(0)
+  correctCount Int @default(0)
+
+  repetitions Int @default(0)
+  interval    Int @default(1)
+  easeFactor  Float @default(2.5)
+  nextReview DateTime?
 
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   user       User       @relation(fields: [userId], references: [id])
   vocabulary Vocabulary @relation(fields: [vocabularyId], references: [id])

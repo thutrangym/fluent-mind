@@ -1,0 +1,77 @@
+﻿.next/dev/types/validator.ts(53,39): error TS2306: File 'E:/fluent-mind/src/app/(admin)/manage-lessons/page.tsx' is not a module.
+.next/dev/types/validator.ts(252,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/topics/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/topics/[id]">'.
+  Types of property 'DELETE' are incompatible.
+    Type '(req: Request, { params }: { params: { id: string; }; }) => Promise<NextResponse<{ success: boolean; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ id: string; }>; }' is not assignable to type '{ params: { id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'id' is missing in type 'Promise<{ id: string; }>' but required in type '{ id: string; }'.
+.next/dev/types/validator.ts(279,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/videos/[youtubeId]/subtitles/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/videos/[youtubeId]/subtitles/[id]">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: Request, { params }: { params: { youtubeId: string; id: string; }; }) => Promise<NextResponse<({ topic: { id: string; createdAt: Date; title: string | null; description: string | null; } | null; subtitles: { ...; }[]; } & { ...; }) | null>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ youtubeId: string; id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ youtubeId: string; id: string; }>; }' is not assignable to type '{ params: { youtubeId: string; id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Type 'Promise<{ youtubeId: string; id: string; }>' is missing the following properties from type '{ youtubeId: string; id: string; }': youtubeId, id
+.next/dev/types/validator.ts(288,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/videos/[youtubeId]/subtitles/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/videos/[youtubeId]/subtitles">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: NextRequest, { params }: { params: Promise<{ youtubeId: string; id: string; }>; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ id: string; videoId: string; startTime: number; endTime: number; text: string; }[]>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ youtubeId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ youtubeId: string; }>; }' is not assignable to type '{ params: Promise<{ youtubeId: string; id: string; }>; }'.
+          Types of property 'params' are incompatible.
+            Type 'Promise<{ youtubeId: string; }>' is not assignable to type 'Promise<{ youtubeId: string; id: string; }>'.
+              Property 'id' is missing in type '{ youtubeId: string; }' but required in type '{ youtubeId: string; id: string; }'.
+.next/dev/types/validator.ts(306,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/vocabulary/deck/[deckId]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/vocabulary/deck/[deckId]">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: Request, { params }: { params: { deckId: string; }; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ vocabularies: { id: string; tier: UserTier; level: CEFRLevel | null; ... 5 more ...; deckId: string | null; }[]; } & { ...; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ deckId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ deckId: string; }>; }' is not assignable to type '{ params: { deckId: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'deckId' is missing in type 'Promise<{ deckId: string; }>' but required in type '{ deckId: string; }'.
+.next/types/validator.ts(53,39): error TS2306: File 'E:/fluent-mind/src/app/(admin)/manage-lessons/page.tsx' is not a module.
+.next/types/validator.ts(252,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/topics/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/topics/[id]">'.
+  Types of property 'DELETE' are incompatible.
+    Type '(req: Request, { params }: { params: { id: string; }; }) => Promise<NextResponse<{ success: boolean; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ id: string; }>; }' is not assignable to type '{ params: { id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'id' is missing in type 'Promise<{ id: string; }>' but required in type '{ id: string; }'.
+.next/types/validator.ts(279,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/videos/[youtubeId]/subtitles/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/videos/[youtubeId]/subtitles/[id]">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: Request, { params }: { params: { youtubeId: string; id: string; }; }) => Promise<NextResponse<({ topic: { id: string; createdAt: Date; title: string | null; description: string | null; } | null; subtitles: { ...; }[]; } & { ...; }) | null>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ youtubeId: string; id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ youtubeId: string; id: string; }>; }' is not assignable to type '{ params: { youtubeId: string; id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Type 'Promise<{ youtubeId: string; id: string; }>' is missing the following properties from type '{ youtubeId: string; id: string; }': youtubeId, id
+.next/types/validator.ts(288,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/videos/[youtubeId]/subtitles/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/videos/[youtubeId]/subtitles">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: NextRequest, { params }: { params: Promise<{ youtubeId: string; id: string; }>; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ id: string; videoId: string; startTime: number; endTime: number; text: string; }[]>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ youtubeId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ youtubeId: string; }>; }' is not assignable to type '{ params: Promise<{ youtubeId: string; id: string; }>; }'.
+          Types of property 'params' are incompatible.
+            Type 'Promise<{ youtubeId: string; }>' is not assignable to type 'Promise<{ youtubeId: string; id: string; }>'.
+              Property 'id' is missing in type '{ youtubeId: string; }' but required in type '{ youtubeId: string; id: string; }'.
+.next/types/validator.ts(306,31): error TS2344: Type 'typeof import("E:/fluent-mind/src/app/api/vocabulary/deck/[deckId]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/vocabulary/deck/[deckId]">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: Request, { params }: { params: { deckId: string; }; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ vocabularies: { id: string; tier: UserTier; level: CEFRLevel | null; ... 5 more ...; deckId: string | null; }[]; } & { ...; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ deckId: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ deckId: string; }>; }' is not assignable to type '{ params: { deckId: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'deckId' is missing in type 'Promise<{ deckId: string; }>' but required in type '{ deckId: string; }'.
+scripts/import-subtitles.ts(53,20): error TS18047: 's' is possibly 'null'.
+scripts/import-subtitles.ts(54,18): error TS18047: 's' is possibly 'null'.
+scripts/import-subtitles.ts(55,15): error TS18047: 's' is possibly 'null'.
+src/app/(user)/profile/page.tsx(9,22): error TS2322: Type 'AuthUser | null' is not assignable to type '{ name: string; id: string; email: string; password: string; image: string | null; role: UserRole; tier: UserTier; level: string; createdAt: Date; updatedAt: Date; } | null'.
+  Type 'AuthUser' is missing the following properties from type '{ name: string; id: string; email: string; password: string; image: string | null; role: UserRole; tier: UserTier; level: string; createdAt: Date; updatedAt: Date; }': password, createdAt, updatedAt
+src/app/(user)/profile/ProfileClient.tsx(60,57): error TS18047: 'user' is possibly 'null'.
+src/app/(user)/profile/ProfileClient.tsx(60,62): error TS2339: Property 'stats' does not exist on type '{ id: string; level: string; tier: UserTier; createdAt: Date; name: string; email: string; password: string; image: string | null; role: UserRole; updatedAt: Date; }'.
+src/app/(user)/profile/ProfileClient.tsx(61,55): error TS18047: 'user' is possibly 'null'.
+src/app/(user)/profile/ProfileClient.tsx(61,60): error TS2339: Property 'stats' does not exist on type '{ id: string; level: string; tier: UserTier; createdAt: Date; name: string; email: string; password: string; image: string | null; role: UserRole; updatedAt: Date; }'.
+src/app/(user)/profile/ProfileClient.tsx(62,58): error TS18047: 'user' is possibly 'null'.
+src/app/(user)/profile/ProfileClient.tsx(62,63): error TS2339: Property 'stats' does not exist on type '{ id: string; level: string; tier: UserTier; createdAt: Date; name: string; email: string; password: string; image: string | null; role: UserRole; updatedAt: Date; }'.
+src/app/(user)/profile/ProfileClient.tsx(63,59): error TS18047: 'user' is possibly 'null'.
+src/app/(user)/profile/ProfileClient.tsx(63,64): error TS2339: Property 'stats' does not exist on type '{ id: string; level: string; tier: UserTier; createdAt: Date; name: string; email: string; password: string; image: string | null; role: UserRole; updatedAt: Date; }'.
+src/app/api/topics/route.ts(18,13): error TS2322: Type 'string[]' is not assignable to type 'CEFRLevel[] | FieldRef<"Video", "CEFRLevel[]"> | undefined'.
+  Type 'string[]' is not assignable to type 'CEFRLevel[]'.
+    Type 'string' is not assignable to type 'CEFRLevel'.
+src/components/nav/Navbar.tsx(49,11): error TS2339: Property 'tier' does not exist on type '{ id: string; role: string; name?: string | undefined; email?: string | undefined; image?: string | undefined; }'.

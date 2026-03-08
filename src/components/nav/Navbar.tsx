@@ -42,15 +42,13 @@ export default function Navbar() {
 
   const role: UserRole = !isLoggedIn
     ? "guest"
-    : user?.role === "admin"
+    : (user as any)?.role === "admin"
       ? "admin"
       : "user";
   const tier: UserTier =
-  user?.tier === "premium" || user?.role === "admin"
-    ? "premium"
-    : "free";
+    (user as any)?.tier === "premium" || (user as any)?.role === "admin" ? "premium" : "free";
 
-const isPremium = tier === "premium";
+  const isPremium = tier === "premium";
   const canShow = (item: NavItem): boolean => {
     if (item.roles && !item.roles.includes(role)) return false;
     if (item.tiers && !item.tiers.includes(tier)) return false;
@@ -98,20 +96,23 @@ const isPremium = tier === "premium";
 
             {moreLinks.length > 0 && (
               <DropdownMenu>
-                <DropdownMenuTrigger className="px-3 py-1.5 text-sm font-semibold flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-blue outline-none">
-                  More <ChevronDown className="w-4 h-4 opacity-50" />
+                <DropdownMenuTrigger className="group px-4 py-2 text-sm font-medium flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 rounded-full transition-all duration-200 outline-none select-none">
+                  <span className="font-semibold text-sm">More</span>
+                  <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-data-[state=open]:rotate-180 transition-transform duration-300" />
                 </DropdownMenuTrigger>
+
                 <DropdownMenuContent
                   align="end"
-                  className="w-48 p-2 mt-2 rounded-2xl shadow-xl bg-white border-gray-100 dark:border-gray-800"
+                  sideOffset={8}
+                  className="w-56 p-1.5 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-100 dark:border-slate-800 animate-in fade-in zoom-in duration-200"
                 >
                   {moreLinks.map((l) => (
                     <DropdownMenuItem
                       key={l.href}
                       asChild
-                      className="rounded-xl cursor-pointer"
+                      className="rounded-xl cursor-pointer px-3 py-2.5 font-semibold text-sm font-medium text-slate-600 dark:text-slate-300 focus:bg-blue-50 focus:text-blue-600 dark:focus:bg-blue-900/30 dark:focus:text-blue-400 outline-none transition-colors duration-150"
                     >
-                      <Link href={l.href} className="w-full">
+                      <Link href={l.href} className="flex items-center w-full">
                         {l.label}
                       </Link>
                     </DropdownMenuItem>
