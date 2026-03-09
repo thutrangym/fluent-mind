@@ -9,9 +9,10 @@ interface Props {
   videoId: string
   youtubeId: string;
   subtitles: Subtitle[];
+  lastTime?: number;
 }
 
-export default function DictationMode({ videoId, youtubeId, subtitles }: Props) {
+export default function DictationMode({ videoId, youtubeId, subtitles, lastTime }: Props) {
   const [player, setPlayer] = useState<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
@@ -37,7 +38,7 @@ export default function DictationMode({ videoId, youtubeId, subtitles }: Props) 
   }, [player, current]);
 
   /* ---------------- ACTIONS ---------------- */
-  
+
   const playSentence = () => {
     if (!player) return;
     player.seekTo(current.startTime, true);
@@ -79,17 +80,17 @@ export default function DictationMode({ videoId, youtubeId, subtitles }: Props) 
 
   return (
     <div className="flex flex-col lg:flex-row gap-12 p-8 md:p-12 min-h-screen bg-[#FAFFF6] text-slate-800 font-sans">
-      
+
       {/* VIDEO SECTION - BORDERED CONTAINER */}
       <div className={`flex-1 transition-all duration-500 ${showVideo ? "opacity-100" : "opacity-5"}`}>
         <div className="sticky top-10 rounded-3xl overflow-hidden border-4 border-white shadow-xl shadow-green-900/5 bg-white">
-          <VideoPlayer videoId={videoId} youtubeId={youtubeId} onReady={setPlayer} />
+          <VideoPlayer videoId={videoId} youtubeId={youtubeId} onReady={setPlayer} mode="dictation" lastTime={lastTime} />
         </div>
       </div>
 
       {/* INTERACTION SECTION */}
       <div className="flex-1 flex flex-col gap-8 max-w-xl mx-auto w-full">
-        
+
         {/* PROGRESS BOX */}
         <div className="p-4 bg-white/50 border border-green-100 rounded-2xl">
           <div className="flex justify-between text-[10px] font-bold text-green-700/60 uppercase tracking-widest mb-2">
@@ -123,22 +124,22 @@ export default function DictationMode({ videoId, youtubeId, subtitles }: Props) 
               autoFocus
               placeholder="Listen and type the sentence..."
               className={`w-full bg-white border-2 rounded-2xl p-5 text-xl transition-all outline-none shadow-sm
-                ${isCorrect 
-                  ? "border-green-500 ring-4 ring-green-50 text-green-700" 
+                ${isCorrect
+                  ? "border-green-500 ring-4 ring-green-50 text-green-700"
                   : "border-slate-200 focus:border-green-400 focus:ring-4 focus:ring-green-100/50"
                 }`}
             />
             {/* AUTO CHECK RESULT */}
 
-        {answer && (
-          <div className="absolute right-5 top-1/2 -translate-y-1/2 text-green-500 font-bold animate-in fade-in zoom-in">
-            {isCorrect ? (
-              <span className="text-green-500">✓</span>
-            ) : (
-              <span className="text-red-500">✗</span>
+            {answer && (
+              <div className="absolute right-5 top-1/2 -translate-y-1/2 text-green-500 font-bold animate-in fade-in zoom-in">
+                {isCorrect ? (
+                  <span className="text-green-500">✓</span>
+                ) : (
+                  <span className="text-red-500">✗</span>
+                )}
+              </div>
             )}
-          </div>
-        )}
           </div>
           <p className="text-[10px] text-slate-400 pl-2 uppercase font-bold tracking-tighter">
             {isCorrect ? "Perfectly matched!" : "Typing area"}
@@ -159,8 +160,8 @@ export default function DictationMode({ videoId, youtubeId, subtitles }: Props) 
             onClick={next}
             disabled={!isCorrect && !showFull}
             className={`flex items-center justify-center gap-2 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all
-              ${isCorrect 
-                ? "bg-green-600 text-white shadow-lg shadow-green-200 translate-y-[-2px]" 
+              ${isCorrect
+                ? "bg-green-600 text-white shadow-lg shadow-green-200 translate-y-[-2px]"
                 : "bg-slate-100 text-slate-300 border border-slate-200 cursor-not-allowed"
               }`}
           >

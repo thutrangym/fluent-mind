@@ -1,8 +1,22 @@
+import "dotenv/config"
+
 import fs from "fs"
 import path from "path"
 import { PrismaClient } from "@prisma/client"
+import { PrismaPg } from "@prisma/adapter-pg"
+import pg from "pg"
 
-const prisma = new PrismaClient()
+const pool = new pg.Pool({
+  connectionString: process.env.DATABASE_URL
+})
+
+const adapter = new PrismaPg(pool)
+
+const prisma = new PrismaClient({
+  adapter
+})
+
+const subtitlesDir = path.join(process.cwd(), "data/subtitles")
 
 function timeToSeconds(time: string) {
   const [h, m, s] = time.replace(",", ".").split(":")
@@ -12,52 +26,60 @@ function timeToSeconds(time: string) {
 function parseSRT(content: string) {
   const blocks = content.split("\n\n")
 
-  return blocks.map((block) => {
-    const lines = block.split("\n")
+  return blocks
+    .map((block) => {
+      const lines = block.trim().split("\n")
 
-    if (lines.length < 3) return null
+      if (lines.length < 3) return null
 
-    const [start, end] = lines[1].split(" --> ")
+      const [start, end] = lines[1].split(" --> ")
 
-    return {
-      startTime: timeToSeconds(start),
-      endTime: timeToSeconds(end),
-      text: lines.slice(2).join(" ")
-    }
-  }).filter(Boolean)
+      return {
+        startTime: timeToSeconds(start),
+        endTime: timeToSeconds(end),
+        text: lines.slice(2).join(" "),
+      }
+    })
+    .filter(Boolean)
 }
 
 async function main() {
+  const files = fs.readdirSync(subtitlesDir).filter((f) => f.endsWith(".srt"))
 
-  const youtubeId = "ZAnS4B2KH1M" 
+  console.log("Found", files.length, "subtitle files")
 
-  const filePath = path.join("data/subtitles", `${youtubeId}.srt`)
+  for (const file of files) {
+    const youtubeId = file.replace(".srt", "")
 
-  const content = fs.readFileSync(filePath, "utf8")
+    const video = await prisma.video.findUnique({
+      where: { youtubeId }
+    })
 
-  const subtitles = parseSRT(content)
+    if (!video) {
+      console.log(" Video not found:", youtubeId)
+      continue
+    }
 
-  const video = await prisma.video.findUnique({
-    where: { youtubeId }
-  })
+    const content = fs.readFileSync(path.join(subtitlesDir, file), "utf8")
 
-  if (!video) {
-    console.log("Video not found")
-    return
-  }
+    const subtitles = parseSRT(content)
 
-  for (const s of subtitles) {
-    await prisma.subtitleSentence.create({
-      data: {
+    await prisma.subtitleSentence.createMany({
+      data: subtitles.map((s: any) => ({
         videoId: video.id,
         startTime: s.startTime,
         endTime: s.endTime,
         text: s.text
-      }
+      })),
+      skipDuplicates: true
     })
-  }
 
-  console.log("Imported:", subtitles.length)
+    console.log(`${youtubeId}: ${subtitles.length} subtitles`)
+  }
 }
 
 main()
+  .catch(console.error)
+  .finally(async () => {
+    await prisma.$disconnect()
+  })

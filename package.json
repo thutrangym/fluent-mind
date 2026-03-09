@@ -20,6 +20,7 @@
     "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "date-fns": "^4.1.0",
+    "dotenv-cli": "^11.0.0",
     "dropdown-menu": "^0.1.1",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.562.0",

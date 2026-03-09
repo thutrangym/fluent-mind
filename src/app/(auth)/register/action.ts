@@ -23,7 +23,10 @@ export async function register(formData: FormData) {
       email,
       password: hashed,
       name,
-      role: "user"
+      role: "user",
+      stats: {
+        create: {}
+      }
     }
   })
 

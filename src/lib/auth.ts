@@ -36,7 +36,8 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
   if (!session?.user?.email) return null
 
   const dbUser = await prisma.user.findUnique({
-    where: { email: session.user.email }
+    where: { email: session.user.email },
+    include: { stats: true }
   })
 
   if (!dbUser) return null
@@ -50,10 +51,14 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
     tier: dbUser.tier.toLowerCase() as UserTier,
     level: dbUser.level ?? "Beginner",
     stats: {
-      streak: 0,
-      videos: 0,
-      rank: 0,
-      studyTime: "0h"
+      streak: dbUser.stats?.streak ?? 0,
+      videos: dbUser.stats?.videos ?? 0,
+      rank: dbUser.stats?.rank ?? 0,
+      studyTime: dbUser.stats?.studyTime
+        ? dbUser.stats.studyTime >= 60
+          ? `${Math.floor(dbUser.stats.studyTime / 60)}h`
+          : `${dbUser.stats.studyTime}m`
+        : "0m"
     }
   }
 }

@@ -33,11 +33,10 @@ export default function VideoTabs({ videoId, youtubeId, subtitles, lastTime }: P
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
-            className={`px-4 py-2 rounded-lg transition ${
-              tab === t.key
+            className={`px-4 py-2 rounded-lg transition ${tab === t.key
                 ? "bg-green-500 text-white"
                 : "text-gray-600 hover:bg-gray-200"
-            }`}
+              }`}
           >
             {t.label}
           </button>
@@ -50,7 +49,7 @@ export default function VideoTabs({ videoId, youtubeId, subtitles, lastTime }: P
           videoId={videoId}
           youtubeId={youtubeId}
           subtitles={subtitles}
-          
+          lastTime={lastTime}
         />
       )}
 
@@ -59,6 +58,7 @@ export default function VideoTabs({ videoId, youtubeId, subtitles, lastTime }: P
           videoId={videoId}
           youtubeId={youtubeId}
           subtitles={subtitles}
+          lastTime={lastTime}
         />
       )}
 
@@ -67,6 +67,7 @@ export default function VideoTabs({ videoId, youtubeId, subtitles, lastTime }: P
           videoId={videoId}
           youtubeId={youtubeId}
           subtitles={subtitles}
+          lastTime={lastTime}
         />
       )}
     </div>

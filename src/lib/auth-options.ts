@@ -25,6 +25,20 @@ export const authOptions: NextAuthOptions = {
 
         if (!user || !user.password) return null
 
+        const stats = await prisma.userStats.findUnique({
+          where: {
+            userId: user.id
+          }
+      })
+
+        if (!stats) {
+          await prisma.userStats.create({
+            data: {
+            userId: user.id
+          }
+        }) 
+      }
+
         const valid = await bcrypt.compare(
           credentials.password,
           user.password

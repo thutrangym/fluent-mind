@@ -9,6 +9,7 @@ interface Props {
   videoId: string;
   youtubeId: string;
   subtitles: Subtitle[];
+  lastTime?: number;
 }
 
 type ShadowingResult = {
@@ -26,6 +27,7 @@ export default function ShadowingMode({
   videoId,
   youtubeId,
   subtitles,
+  lastTime,
 }: Props) {
   const [player, setPlayer] = useState<YouTubePlayer | null>(null);
   const [index, setIndex] = useState(0);
@@ -174,6 +176,8 @@ export default function ShadowingMode({
             videoId={videoId}
             youtubeId={youtubeId}
             onReady={setPlayer}
+            mode="shadowing"
+            lastTime={lastTime}
           />
         </div>
       </div>
@@ -265,11 +269,10 @@ export default function ShadowingMode({
             onClick={sendToWhisper}
             disabled={!audioBlob || recording}
             className={`flex items-center justify-center gap-2 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all border
-          ${
-            audioBlob && !recording
-              ? "bg-green-600 text-white border-green-700 shadow-lg shadow-green-200 translate-y-[-2px]"
-              : "bg-slate-50 text-slate-300 border-slate-200 cursor-not-allowed"
-          }`}
+          ${audioBlob && !recording
+                ? "bg-green-600 text-white border-green-700 shadow-lg shadow-green-200 translate-y-[-2px]"
+                : "bg-slate-50 text-slate-300 border-slate-200 cursor-not-allowed"
+              }`}
           >
             <span className="text-lg">Check</span>
             <span>➔</span>

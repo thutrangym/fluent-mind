@@ -1,24 +1,67 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { Sparkles, Flame, Clock, Trophy } from "lucide-react";
-import { User } from "@prisma/client"
+import Image from "next/image"
+import Link from "next/link"
+import { Sparkles, Flame, Clock, Trophy } from "lucide-react"
+import avatarPlaceholder from "@/src/assets/avatar_placeholder.jpg"
+import { useState } from "react"
+
+type Progress = {
+  id: string
+  youtubeId: string
+  progress: number
+  completed: boolean
+  lastTime: number
+  mode: "dictation" | "shadowing"
+
+  video: {
+    youtubeId: string
+    title: string | null
+  }
+}
+
+type ProfileUser = {
+  id: string
+  name: string
+  email: string
+  image: string | null
+  tier: "free" | "premium"
+  level: string
+
+  stats: {
+    streak: number
+    videos: number
+    rank: number
+    studyTime: number
+  } | null
+
+  progress: Progress[]
+}
 
 type Props = {
-  user: User | null
+  user: ProfileUser | null
 }
 
 export default function ProfileClient({ user }: Props) {
-const isFree = user?.tier === "free";
+  const [tab, setTab] = useState<"dictation" | "shadowing">("dictation")
+
+  if (!user) return null
+
+  const isFree = user.tier === "free"
+
+  const filteredProgress = user.progress.filter(
+    (p) => p.mode === tab
+  )
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-8">
 
-      {/* ===== HEADER ===== */}
+      {/* HEADER */}
       <section className="rounded-3xl bg-gradient-to-r from-[#34DBC5]/10 to-[#88DF46]/10 p-6 flex flex-col md:flex-row items-center gap-6">
+
         <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
           <Image
-            src={user?.image || "/avatar-placeholder.png"}
+            src={user.image || avatarPlaceholder}
             alt="avatar"
             fill
             className="object-cover"
@@ -26,12 +69,16 @@ const isFree = user?.tier === "free";
         </div>
 
         <div className="flex-1 text-center md:text-left space-y-1">
-          <h1 className="text-2xl font-black">{user?.name}</h1>
-          <p className="text-sm text-gray-500">{user?.email}</p>
+          <h1 className="text-2xl font-black">{user.name}</h1>
+
+          <p className="text-sm text-gray-500">{user.email}</p>
+
           <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-2">
+
             <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-600">
-              Level {user?.level}
+              {user.level}
             </span>
+
             <span
               className={`px-3 py-1 rounded-full text-xs font-bold ${
                 isFree
@@ -39,8 +86,9 @@ const isFree = user?.tier === "free";
                   : "bg-amber-100 text-amber-700"
               }`}
             >
-              {user?.tier.toUpperCase()}
+              {user.tier.toUpperCase()}
             </span>
+
           </div>
         </div>
 
@@ -55,36 +103,133 @@ const isFree = user?.tier === "free";
         )}
       </section>
 
-      {/* ===== STATS ===== */}
+      {/* STATS */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <StatCard icon={Flame} label="Streak" value={`${user.stats.streak} days`} />
-        <StatCard icon={Trophy} label="Videos" value={user.stats.videos} />
-        <StatCard icon={Clock} label="Study Time" value={user.stats.studyTime} />
-        <StatCard icon={Sparkles} label="Rank" value={`#${user.stats.rank}`} />
+
+        <StatCard
+          icon={Flame}
+          label="Streak"
+          value={`${user.stats?.streak ?? 0} days`}
+        />
+
+        <StatCard
+          icon={Trophy}
+          label="Videos"
+          value={user.stats?.videos ?? 0}
+        />
+
+        <StatCard
+          icon={Clock}
+          label="Study Time"
+          value={`${user.stats?.studyTime ?? 0} min`}
+        />
+
+        <StatCard
+          icon={Sparkles}
+          label="Rank"
+          value={`#${user.stats?.rank ?? 0}`}
+        />
+
       </section>
 
-      {/* ===== LEARNING PROGRESS ===== */}
-      <section className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm space-y-4">
-        <h2 className="font-bold text-lg">Continue Learning</h2>
+      {/* LESSON PROGRESS */}
+      <section className="space-y-4">
 
-        <div className="rounded-xl bg-gray-100 dark:bg-gray-800 p-4 flex items-center justify-between">
-          <div>
-            <p className="font-semibold">Daily Conversation Shadowing</p>
-            <p className="text-xs text-gray-500">Progress: 80%</p>
-          </div>
-          <button className="px-4 py-2 rounded-lg bg-[#34DBC5] text-white font-bold">
-            Continue
+        <h2 className="text-lg font-bold">
+          Lesson Progress
+        </h2>
+
+        {/* Tabs */}
+        <div className="flex gap-2">
+
+          <button
+            onClick={() => setTab("dictation")}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
+              tab === "dictation"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-100 hover:bg-gray-200"
+            }`}
+          >
+            Dictation
           </button>
+
+          <button
+            onClick={() => setTab("shadowing")}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
+              tab === "shadowing"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-100 hover:bg-gray-200"
+            }`}
+          >
+            Shadowing
+          </button>
+
         </div>
 
-        {isFree && (
-          <p className="text-xs text-amber-600">
-            ⚠️ Shadowing is limited to 10 sessions/day on Free plan.
+        {/* Progress List */}
+        {filteredProgress.length === 0 ? (
+
+          <p className="text-sm text-gray-500">
+            No lessons found
           </p>
+
+        ) : (
+
+          <div className="space-y-3">
+
+            {filteredProgress.map((item) => (
+
+              <div
+                key={item.id}
+                className="flex items-center gap-4 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition"
+              >
+
+                <Image
+                  src={`https://img.youtube.com/vi/${item.youtubeId}/mqdefault.jpg`}
+                  alt={item.video.title ?? "Video"}
+                  width={48}
+                  height={48}
+                  className="rounded-lg"
+                />
+
+                <div className="flex-1">
+
+                  <p className="text-sm font-medium">
+                    {item.video.title ?? "Untitled"}
+                  </p>
+
+                  {/* Progress bar */}
+                  <div className="w-full h-2 bg-gray-200 rounded-full mt-1 overflow-hidden">
+                    <div
+                      className="h-full bg-[#34DBC5]"
+                      style={{ width: `${item.progress}%` }}
+                    />
+                  </div>
+
+                </div>
+
+                {item.completed ? (
+                  <span className="text-green-600 text-xs font-bold">
+                    Completed
+                  </span>
+                ) : (
+                  <span className="text-yellow-500 text-xs font-bold">
+                    In Progress
+                  </span>
+                )}
+
+              </div>
+
+            ))}
+
+          </div>
+
         )}
+
       </section>
+
     </div>
-  );
+  )
 }
 
 function StatCard({
@@ -92,17 +237,25 @@ function StatCard({
   label,
   value,
 }: {
-  icon: React.ComponentType<{ className: string }>;
-  label: string;
-  value: string | number;
+  icon: React.ComponentType<{ className?: string }>
+  label: string
+  value: string | number
 }) {
   return (
     <div className="rounded-2xl bg-white dark:bg-gray-900 p-4 shadow-sm flex items-center gap-3">
+
       <Icon className="w-6 h-6 text-[#34DBC5]" />
+
       <div>
-        <p className="text-xs text-gray-500">{label}</p>
-        <p className="font-bold">{value}</p>
+        <p className="text-xs text-gray-500">
+          {label}
+        </p>
+
+        <p className="font-bold">
+          {value}
+        </p>
       </div>
+
     </div>
-  );
+  )
 }

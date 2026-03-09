@@ -9,9 +9,10 @@ interface Props {
   videoId: string
   lastTime?: number
   onReady?: (player: YouTubePlayer) => void
+  mode?: "dictation" | "shadowing"
 }
 
-export default function VideoPlayer({ youtubeId, videoId, lastTime, onReady }: Props) {
+export default function VideoPlayer({ youtubeId, videoId, lastTime, onReady, mode }: Props) {
   const playerRef = useRef<YouTubePlayer | null>(null)
 
   const handleReady = (event: YouTubeEvent) => {
@@ -19,10 +20,10 @@ export default function VideoPlayer({ youtubeId, videoId, lastTime, onReady }: P
     onReady?.(event.target)
 
     if (lastTime) {
-    event.target.seekTo(lastTime)
-  }
+      event.target.seekTo(lastTime)
+    }
 
-  onReady?.(event.target)
+    onReady?.(event.target)
   }
 
   const opts = {
@@ -39,33 +40,42 @@ export default function VideoPlayer({ youtubeId, videoId, lastTime, onReady }: P
   /* ================= SAVE PROGRESS ================= */
 
   useEffect(() => {
-  const interval = setInterval(async () => {
+    const interval = setInterval(async () => {
 
-    if (!playerRef.current) return
+      if (!playerRef.current) return
 
-    const currentTime = playerRef.current.getCurrentTime()
-    const duration = playerRef.current.getDuration()
+      if (!youtubeId || !videoId || !mode) return
 
-    if (!duration) return
+      const currentTime = playerRef.current.getCurrentTime()
+      const duration = playerRef.current.getDuration()
 
-    const progress = Math.floor((currentTime / duration) * 100)
+      if (!duration) return
 
-    await fetch("/api/progress", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        youtubeId,
-        progress,
-        lastTime: Math.floor(currentTime)
+      const progress = Math.floor((currentTime / duration) * 100)
+
+      const res = await fetch("/api/progress", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          youtubeId,
+          videoId,
+          progress,
+          lastTime: Math.floor(currentTime),
+          mode
+        })
       })
-    })
 
-  }, 5000)
+      if (!res.ok) {
+        const errorData = await res.json()
+        console.error("Progress API Error:", errorData.error)
+      }
 
-  return () => clearInterval(interval)
-}, [youtubeId])
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [youtubeId, videoId, mode])
 
   return (
     <div className="w-full aspect-video bg-black rounded-xl overflow-hidden">

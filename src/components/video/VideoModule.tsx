@@ -57,6 +57,7 @@ export default function VideoModule({ videoId, youtubeId, subtitles, lastTime }:
           youtubeId={youtubeId}
           lastTime={lastTime}
           onReady={setPlayer}
+          mode="dictation"
         />
       </div>
 

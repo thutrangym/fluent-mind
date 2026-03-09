@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
     const whisperUrl =
       process.env.LOCAL_WHISPER_URL || "http://127.0.0.1:8001/transcribe-score";
-
+    console.log("WHISPER URL:", whisperUrl);
     const forward = new FormData();
     forward.append("file", file, file.name || "shadowing.webm");
     forward.append("reference", reference);
