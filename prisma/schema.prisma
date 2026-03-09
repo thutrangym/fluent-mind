@@ -175,6 +175,10 @@ model Comment {
   post      CommunityPost? @relation(fields: [postId], references: [id], onDelete: Cascade)
   user      User           @relation(fields: [userId], references: [id])
   video     Video?         @relation(fields: [videoId], references: [id])
+  @@index([postId])
+  @@index([videoId])
+  @@index([parentId])
+  @@index([createdAt])
 }
 
 model Leaderboard {

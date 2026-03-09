@@ -1,33 +1,28 @@
-import CommunityHeader from "@/src/components/community/community-header";
-import CommentForm from "@/src/components/community/comment-form";
-import CommentList from "@/src/components/community/comment-list";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/src/lib/auth-options";
 
-export default function CommunityPage() {
-  const isAuthenticated = true;
+import CommunityHeader from "@/src/components/community/community-header";
+import CreatePost from "@/src/components/community/create-post";
+import PostList from "@/src/components/community/post-list";
+
+export default async function CommunityPage() {
+
+  const session = await getServerSession(authOptions);
+
+  const userId = session?.user?.id;
 
   return (
-    <main className="min-h-screen bg-[#FAFFF6] px-6 py-10">
-      <div className="mx-auto max-w-3xl space-y-8">
-        <CommunityHeader />
+    <main className="bg-[#FAFFF6]">
+    <div className="max-w-2xl  mx-auto p-6 space-y-6">
 
-        {isAuthenticated ? (
-          <CommentForm />
-        ) : (
-          <div className="rounded-xl border bg-white p-6 text-center">
-            <p className="text-gray-600">
-              Sign in to join the discussion and share your thoughts ✨
-            </p>
-            <a
-              href="/login"
-              className="mt-4 inline-block rounded-lg bg-[#34DBC5] px-6 py-2 font-medium text-white"
-            >
-              Sign in
-            </a>
-          </div>
-        )}
+      <CommunityHeader />
 
-        <CommentList />
-      </div>
+      <CreatePost userId={userId} />
+
+      <PostList />
+
+    </div>
+
     </main>
   );
 }
